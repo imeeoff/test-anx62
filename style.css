@@ -1123,9 +1123,19 @@ body.modal-open {
 
 /* ---------------- Responsive ---------------- */
 
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 980px;
+  margin: 0 auto;
+}
+
 @media (max-width: 980px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: none;
   }
   .list-3 {
     grid-template-columns: repeat(2, 1fr);
@@ -1173,6 +1183,7 @@ body.modal-open {
 
 @media (max-width: 600px) {
   .grid,
+  .grid-3,
   .list-3,
   .list-2 {
     grid-template-columns: 1fr;
