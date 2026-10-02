@@ -59,10 +59,7 @@
       <div class="container">
         <div class="card story">
           <div class="story-media">
-            <div class="ph-photo">
-                  <svg viewBox="0 0 24 24" width="36" height="36"><path d="M6 2h9l5 5v15H6V2zm8 1.5V8h4.5L14 3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h4v1.5H8V10z" fill="currentColor"/></svg>
-                  <span>Скан рекомендательного письма</span>
-                </div>
+            <img class="story-photo lightbox-trigger" src="img/reviews/naftan.jpg" alt="Рекомендательное письмо ООО «Нафтан»" data-full="img/reviews/naftan.jpg" loading="lazy">
           </div>
           <div class="story-text">
             <p>ООО «АльянсНефтеХим» является нашим надёжным клиентом в сфере закупок тёмных нефтепродуктов. Компания зарекомендовала себя квалифицированным, платежеспособным и ответственным партнёром. Благодарим за хорошее надёжное долгосрочное сотрудничество!</p>
@@ -153,6 +150,11 @@
         <button type="submit" class="btn btn-primary">Отправить</button>
       </form>
     </div>
+  </div>
+
+  <div class="lightbox-overlay" id="lightbox" aria-hidden="true">
+    <button type="button" class="lightbox-close" data-close-lightbox aria-label="Закрыть">✕</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
   </div>
 
   <script src="script.js"></script>

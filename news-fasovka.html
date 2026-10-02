@@ -59,10 +59,7 @@
       <div class="container">
         <div class="card story">
           <div class="story-media">
-            <div class="ph-photo">
-                  <svg viewBox="0 0 24 24" width="36" height="36"><path d="M20 7h-3.17A3 3 0 1 0 12 4.5 3 3 0 1 0 6.17 7H3a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM12 7a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 7zm-3-1.5A1.5 1.5 0 1 1 10.5 7H9a1.5 1.5 0 0 1 0-1.5zM4 13v7a1 1 0 0 0 1 1h6v-8zm9 0v8h6a1 1 0 0 0 1-1v-7z" fill="currentColor"/></svg>
-                  <span>Фото производства</span>
-                </div>
+            <img class="story-photo" src="img/news/fasovka.jpg" alt="Запуск линии по фасовке дорожного битума" loading="lazy">
           </div>
           <div class="story-text">
             <p>В январе 2018 года запланирован запуск линии по фасовке дорожного битума.</p>
@@ -153,6 +150,11 @@
         <button type="submit" class="btn btn-primary">Отправить</button>
       </form>
     </div>
+  </div>
+
+  <div class="lightbox-overlay" id="lightbox" aria-hidden="true">
+    <button type="button" class="lightbox-close" data-close-lightbox aria-label="Закрыть">✕</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
   </div>
 
   <script src="script.js"></script>

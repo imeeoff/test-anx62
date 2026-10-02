@@ -59,10 +59,7 @@
       <div class="container">
         <div class="card story">
           <div class="story-media">
-            <div class="ph-photo">
-                  <svg viewBox="0 0 24 24" width="36" height="36"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 13.5l2.5 3 3.5-4.5 4.5 6H5l3.5-4.5z" fill="currentColor"/></svg>
-                  <span>Фото команды</span>
-                </div>
+            <img class="story-photo" src="img/news/report-2017.jpg" alt="Итоги работы за 2017 год" loading="lazy">
           </div>
           <div class="story-text">
             <p>На рынке производителей ПБВ компания «АльянсНефтеХим» является молодой организацией, но, несмотря на то, что организация выпускает продукцию с марта 2017 года, выпуск продукции за первый год составил 4600 тонн.</p>
@@ -154,6 +151,11 @@
         <button type="submit" class="btn btn-primary">Отправить</button>
       </form>
     </div>
+  </div>
+
+  <div class="lightbox-overlay" id="lightbox" aria-hidden="true">
+    <button type="button" class="lightbox-close" data-close-lightbox aria-label="Закрыть">✕</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
   </div>
 
   <script src="script.js"></script>

@@ -1078,6 +1078,23 @@ body.modal-open {
   margin-bottom: 0;
 }
 
+.story-photo {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+}
+
+.lightbox-trigger {
+  cursor: zoom-in;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.lightbox-trigger:hover {
+  transform: scale(1.015);
+  box-shadow: var(--shadow);
+}
+
 .ph-photo {
   width: 100%;
   min-height: 220px;
@@ -1161,6 +1178,75 @@ body.modal-open {
 
 [data-theme="dark"] .policy-text a {
   color: #7fa0ff;
+}
+
+/* ---------------- Lightbox (увеличение письма/фото) ---------------- */
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(8, 11, 16, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition), visibility var(--transition);
+}
+
+.lightbox-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-img {
+  max-width: min(90vw, 760px);
+  max-height: 88vh;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  background: #fff;
+  transform: scale(0.92);
+  opacity: 0;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.lightbox-overlay.open .lightbox-img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 22px;
+  right: 26px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: var(--accent-red);
+  transform: rotate(90deg);
+}
+
+@media (max-width: 600px) {
+  .lightbox-overlay {
+    padding: 20px;
+  }
 }
 
 /* ---------------- Footer ---------------- */

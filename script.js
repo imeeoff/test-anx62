@@ -65,6 +65,42 @@
       if (a.getAttribute("data-page") === path) a.classList.add("active");
     });
 
+    // Лайтбокс для увеличения сканов писем / фото
+    const lightbox = document.getElementById("lightbox");
+    if (lightbox) {
+      const lightboxImg = document.getElementById("lightboxImg");
+      const triggers = document.querySelectorAll(".lightbox-trigger");
+
+      const openLightbox = (src, alt) => {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || "";
+        lightbox.classList.add("open");
+        document.body.classList.add("modal-open");
+      };
+      const closeLightbox = () => {
+        lightbox.classList.remove("open");
+        document.body.classList.remove("modal-open");
+      };
+
+      triggers.forEach((img) => {
+        img.addEventListener("click", () => {
+          openLightbox(img.getAttribute("data-full") || img.src, img.alt);
+        });
+      });
+
+      lightbox.querySelectorAll("[data-close-lightbox]").forEach((btn) =>
+        btn.addEventListener("click", closeLightbox)
+      );
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
+      });
+    }
+
     // Аккордеон карточек продукции
     const accordion = document.getElementById("productsAccordion");
     if (accordion) {
