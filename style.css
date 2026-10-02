@@ -695,11 +695,25 @@ section {
 
 .review-card,
 .news-card {
+  display: block;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 24px;
   box-shadow: var(--shadow);
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+a.review-card,
+a.news-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.review-card:hover,
+a.news-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-red);
 }
 
 .review-card .date,
@@ -1012,6 +1026,99 @@ body.modal-open {
 
 .modal-privacy-link:hover {
   color: var(--accent-red);
+}
+
+/* ---------------- Section tabs (Новости/Статьи/Отзывы/...) ---------------- */
+
+.section-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.tab-link {
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+.tab-link:hover {
+  color: var(--text);
+  border-color: var(--accent-red);
+}
+
+.tab-link.active {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  color: #fff;
+}
+
+/* ---------------- Story page (новость / отзыв) ---------------- */
+
+.story {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.story-text p {
+  color: var(--text-muted);
+  font-size: 15px;
+  margin: 0 0 14px;
+}
+
+.story-text p:last-child {
+  margin-bottom: 0;
+}
+
+.ph-photo {
+  width: 100%;
+  min-height: 220px;
+  border-radius: 12px;
+  border: 1px dashed var(--border);
+  background: var(--bg-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--text-muted);
+}
+
+.ph-photo span {
+  font-size: 13px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  padding: 11px 20px;
+  border-radius: 999px;
+  border: 2px solid var(--text);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 14px;
+  transition: all var(--transition);
+}
+
+.back-btn:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+@media (max-width: 760px) {
+  .story {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---------------- Policy text ---------------- */
