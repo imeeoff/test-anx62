@@ -1034,6 +1034,7 @@ body.modal-open {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-top: 22px;
   margin-bottom: 36px;
 }
 
@@ -1204,9 +1205,10 @@ body.modal-open {
 }
 
 .lightbox-img {
-  max-width: min(90vw, 760px);
+  width: min(90vw, 640px);
   max-height: 88vh;
-  width: auto;
+  height: auto;
+  object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
   background: #fff;
