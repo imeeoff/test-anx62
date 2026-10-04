@@ -452,6 +452,131 @@ section {
   color: #7fa0ff;
 }
 
+/* ---------------- About: info cards (Оборудование/Реализация/Продукция/Лаборатория) ---------------- */
+
+.info-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.info-card {
+  position: relative;
+  padding: 36px 36px 64px;
+}
+
+.info-media {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.info-media-reverse {
+  grid-template-columns: 1fr 1.1fr;
+}
+
+.info-media-reverse .info-photo {
+  order: -1;
+}
+
+.info-text h3 {
+  font-size: 24px;
+  margin: 0 0 14px;
+}
+
+.info-text p {
+  color: var(--text-muted);
+  font-size: 15px;
+  margin: 0;
+}
+
+.info-photo {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.info-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+
+.info-stat-num {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--accent-red);
+  margin-bottom: 6px;
+}
+
+.info-stat-num span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.info-stat p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+.info-goto {
+  position: absolute;
+  right: 28px;
+  bottom: 24px;
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 2px solid var(--accent-red);
+  color: var(--accent-red);
+  font-weight: 700;
+  font-size: 14px;
+  transition: all var(--transition);
+}
+
+.info-goto:hover {
+  background: var(--accent-red);
+  color: #fff;
+}
+
+.info-territory {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 760px) {
+  .info-media,
+  .info-media-reverse {
+    grid-template-columns: 1fr;
+  }
+  .info-media-reverse .info-photo {
+    order: 0;
+  }
+  .info-photo {
+    height: 220px;
+  }
+  .info-stats {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .info-card {
+    padding: 26px 22px 64px;
+  }
+  .info-territory {
+    height: 200px;
+  }
+}
+
 /* ---------------- Partners ---------------- */
 
 .partners-grid {
